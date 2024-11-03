@@ -52,9 +52,18 @@ Display the confusion matrix and accuracy for our testing data.
 Here we see that 3 predictions of group 2 were predicted incorrectly and we got a good accuracy of 97.8 %.
 
 But sometimes we may get lucky for getting this better accuracy. So we train the data by splitting the training data into multiple parts and store the accuracies of every part in a list. This is called as 
-"k - fold cross validation" where k represents the number of parts the training data is divided. We then caluculate the mean of the accuracies and also mean deviation which will improve our model and make it even more robust.
+"k - fold cross validation" where k represents the number of parts the training data is divided. We then caluculate the mean of the accuracies and also mean deviation which will improve our model and make it even
+more robust.
 
 k-fold cross validation method can be implemented by importing the "cross_val_score" method from the sklean library. We then append all the resulting accuracies of every portion in a list called "accurcies".
 The cross_val_score requires few parameters that need to be passed. They are:
 1. estimator:-
-     It represents the 
+     It represents the variable on which the model is trained. Here it is classifier.
+2. X and y values:-
+     As we are training k-fold cross validation on training set
+     X = X_train, y = y_train
+3. cv:-
+     It represents how many parts are we splitting the training data i.e, the value of k. Here we take cv as 10 for better results.
+Then we can see the average accuracy as 98.93 % and standard deviation as 1.18 %.
+With this we can say that our model is ready for implementation and will give accurate results as given in the sample prediction.
+
