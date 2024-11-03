@@ -64,6 +64,7 @@ The cross_val_score requires few parameters that need to be passed. They are:
      X = X_train, y = y_train
 3. cv:-
      It represents how many parts are we splitting the training data i.e, the value of k. Here we take cv as 10 for better results.
+
 Then we can see the average accuracy as 98.93 % and standard deviation as 1.18 %.
 With this we can say that our model is ready for implementation and will give accurate results as given in the sample prediction.
 
