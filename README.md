@@ -26,6 +26,8 @@ The Xgboost model expects the data in the dependent variable(y) to have the star
 Our data need to be split into training data and testing data before start of model building.
 We train the model on the training data and test our model using the testing data to detect any bugs or errors in our model.
 Usually the testing data consists of 20% of whole data.
+X_train, y_train consists of training data.
+X_test and y_test consists of testing data.
 
 # Feature Scalling
 The features(data in x) are scalled using the standardizing technique which is given as
@@ -33,3 +35,26 @@ The features(data in x) are scalled using the standardizing technique which is g
 X' = (X - Xmin)/(Xmax - Xmin)
 
 It is used to prevent some of the features in dataset to get dominated by other features and the model do not even consider those features.
+
+# Principal Component Analysis
+It finds the co-relaton between the variables and if there is a strong relation it will reduce the variables
+In this way it will reduce the dimensions and make the model easy to learn.
+
+# Building the model
+I trained my model on Xgboost. To use this we have to import XGBClassifier from Xgboost module and create an instance of this class as "Classifier".
+Fit the X_train, y_train values so that model gets trained on Xgboost using training values.
+
+Create a confusion matrix and accuracy score for our testing data which will describe how our model is responding to new values.
+Confusion matrix shows the exact predictions of our model by showing the ones which were predicted incorrect and which were predicted correct.
+"confusion_matrix" and "accuracy_score" are imported from the sklearn library.
+Introduce a new variable "y_pred" which will take the prediction of dependent variable (To which group the user belong).
+Display the confusion matrix and accuracy for our testing data.
+Here we see that 3 predictions of group 2 were predicted incorrectly and we got a good accuracy of 97.8 %.
+
+But sometimes we may get lucky for getting this better accuracy. So we train the data by splitting the training data into multiple parts and store the accuracies of every part in a list. This is called as 
+"k - fold cross validation" where k represents the number of parts the training data is divided. We then caluculate the mean of the accuracies and also mean deviation which will improve our model and make it even more robust.
+
+k-fold cross validation method can be implemented by importing the "cross_val_score" method from the sklean library. We then append all the resulting accuracies of every portion in a list called "accurcies".
+The cross_val_score requires few parameters that need to be passed. They are:
+1. estimator:-
+     It represents the 
