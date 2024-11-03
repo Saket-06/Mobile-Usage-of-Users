@@ -29,6 +29,7 @@ Usually the testing data consists of 20% of whole data.
 
 # Feature Scalling
 The features(data in x) are scalled using the standardizing technique which is given as
-$$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+![Equation](https://latex.codecogs.com/png.latex?x%20%3D%20%5Cfrac%7B-b%20%5Cpm%20%5Csqrt%7Bb%5E2%20-%204ac%7D%7D%7B2a%7D)
+
 
 It is used to prevent some of the features in dataset to get dominated by other features and the model do not even consider those features.
