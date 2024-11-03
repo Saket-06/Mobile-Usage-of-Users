@@ -29,6 +29,7 @@ Usually the testing data consists of 20% of whole data.
 
 # Feature Scalling
 The features(data in x) are scalled using the standardizing technique which is given as
+
 X' = (X - Xmin)/(Xmax - Xmin)
 
 It is used to prevent some of the features in dataset to get dominated by other features and the model do not even consider those features.
