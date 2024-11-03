@@ -19,4 +19,16 @@ In this section I have imported the following three important libraries:
 # Importing the dataset
 In this section I have imported the dataset.
 The variable X has the columns neccesary for making a prediction such as "App Usage time", "Screen ON Time", "Battery Drained", "Data Used". The other columns does not affect the prediction. So there is no need to include them.
-The variable y has the group 
+The variable y has the group in which people are classified based upon the data in variable X.
+The Xgboost model expects the data in the dependent variable(y) to have the starting value as 0. So i have decremented all the values in y by 1.
+
+# Splitting the data into training set and test set
+Our data need to be split into training data and testing data before start of model building.
+We train the model on the training data and test our model using the testing data to detect any bugs or errors in our model.
+Usually the testing data consists of 20% of whole data.
+
+# Feature Scalling
+The features(data in x) are scalled using the standardizing technique which is given as
+$$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+It is used to prevent some of the features in dataset to get dominated by other features and the model do not even consider those features.
